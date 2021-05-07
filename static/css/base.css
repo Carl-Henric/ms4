@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Satisfy&display=swap');
+
+html {
+    height: 100%
+}
+
+.logo {
+    font-family: 'Satisfy', cursive !important;
+    font-size: 35px;
+    color: #536162;
+}
+
+.beige {
+    background-color: #f3f4ed;
+}
+
+body {
+    background: url('/media/rolexbgjpg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #424642;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 50%;
+}
+
+.staffpicks {
+    background-color: #f3f4ed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+p {
+    color: #424642;
+    font-size: 15px;
+}
+
+.oldgrey {
+    color: #424642;
+}
+
+.cta-button {
+    background-color: #c06014;
+    padding: 10px;
+    color: #f3f4ed;
+
+}
+
+/*-------------------- Media Queries */
+
+@media (min-width: 992px) {
+    .fixed-top-dektop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index
+    }
+
+    .header-container {
+        padding-top: 160px;
+    }
+}
