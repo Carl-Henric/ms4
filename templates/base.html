@@ -36,53 +36,62 @@
     <header class="container-fluid fixed-top beige">
         <div class="text-center small bg-dark">
             <p class="text-white">Free shipping<i class="fas fa-shipping-fast mr-2"></i>
-                100% authentic watches <i class="fas fa-award mr-2"></i>
+                
                 Safe payment <i class="fas fa-handshake mr-2"></i>
             </p>
         </div>
-        <div class="row pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-    
+        <div class="row pt-lg-2 flex">
+            <!-- Collapsable menu button  -->
+            <div class="col-4">
+                <nav class="navbar navbar-expand-lg navbar-light beige">
+                <button class="navbar-toggler oldgrey mobile-font" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            <!--  End of Collapsable menu button  -->
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
+            <div class="col-4 text-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="my-0 logo">Old And Gold</h2>
-                    <p class="small">Vintage watches online</p>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <div class="col-4">
+                <!-- Profile section  -->
+                <ul class="list-inline list-unstyled text-center">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            <div class="text-center">
+                            <div class="text-center mobile-hide">
                                 <div>
-                                    <i class="fas fa-user fa-lg oldgrey"></i>
+                                    <i class="fas fa-user oldgrey mobile-font"></i>
                                 </div>
-                                <p class="my-0">My Account</p>
+                                <p class="my-0 mobile-font">My Account </p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Product Management</a>
+                            <a href="" class="dropdown-item mobile-font">Product Management</a>
                             {% endif %}
-                            <a href="" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <a href="" class="dropdown-item mobile-font">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item mobile-font">Logout</a>
                             {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'account_signup' %}" class="dropdown-item mobile-font">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item mobile-font">Login</a>
                             {% endif %}
                         </div>
                     </li>
+                <!-- End of profile section  -->
+                <!-- Shopping bag section  -->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="">
                             <div class="text-center">
                                 <div>
-                                    <i class="fas fa-shopping-bag fa-lg oldgrey"></i>
+                                    <i class="fas fa-shopping-bag oldgrey mobile-font"></i>
                                 </div>
-                                <p class="my-0">
+                                <p class="my-0 mobile-font">
                                     {% if grand_total %}
                                     ${{ grand_total | floatformat:2 }}
                                     {% else %}
@@ -92,14 +101,48 @@
                             </div>
                         </a>
                     </li>
+                <!-- End of shopping bag section  -->
                 </ul>
             </div>
         </div>
-    <!-- Navigation -->
-
-    <!-- End of navigation -->
-
-    
+<!-- Navigation navbar -->
+<nav class="navbar navbar-expand-lg navbar-light beige justify-content-center">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link oldgrey" href="#">All Watches</a>
+            </li>
+           <li class="nav-item">
+                <a class="nav-link oldgrey" href="#">Rolex</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link oldgrey" href="#">Omega</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link oldgrey" href="#">Tudor</a>
+            </li>
+            <li class="list-inline-item dropdown hide-desktop">
+                <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <p class="nav-link">My Account <i class="fas fa-chevron-down oldgrey mobile-font"></i></p>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item mobile-font">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item mobile-font">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item mobile-font">Logout</a>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item mobile-font">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item mobile-font">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- End of navigation -->
     </header>
 
     {% if messages %}
