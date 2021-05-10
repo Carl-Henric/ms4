@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid bg-light pt-5">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 bg-white pt-1">
+                <div class="image-container py-2">
+                    <a href="{{ product.image.url }}" target="_blank">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100%">
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 bg-white py-1">
+                <div class="py-2">
+                    <h2>{{ product.brand }} {{ product.name }}</h2>
+                    <h5 class="font-weight-bold">$ {{ product.price }}</h5>
+                    <hr>
+                    <p class="bigfont">{{ product.description }}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <strong>Condition: </strong>{{ product.condition }}
+                        </div>
+                        <div class="col-6">
+                            <strong>Year: </strong>{{ product.year }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
