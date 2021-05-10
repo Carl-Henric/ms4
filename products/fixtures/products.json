@@ -1,0 +1,258 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "r1",
+      "brand": "Rolex",
+      "name": "Daytona",
+      "description": "Nice condition with small scratches on the crown. Comes with all papers.",
+      "price": 24500,
+      "year": 1994,
+      "category": 1,
+      "condition": "Good",
+      "image_url": "/media/rolexdaytona.jpg",
+      "image": "rolexdaytona.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "r2",
+      "brand": "Rolex",
+      "name": "GMT-Master II",
+      "description": "Very unique and rare version. Perfect condition with all papers included.",
+      "price": 7700,
+      "year": 1992,
+      "category": 1,
+      "condition": "New",
+      "image_url": "/media/rolexgmt.jpg",
+      "image": "rolexgmt.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "r3",
+      "brand": "Rolex",
+      "name": "Submariner",
+      "description": "One of a few known Rolex Mariners in gold from 1993. Ok condition and perfect movement",
+      "price": 72000,
+      "year": 1993,
+      "category": 1,
+      "condition": "Ok",
+      "image_url": "/media/rolexsubmariner.jpg",
+      "image": "rolexsubmariner.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "r4",
+      "brand": "Rolex",
+      "name": "Explorer II",
+      "description": "Used on Mt Everest expedition in 2009. Movement not working perfect but in overall ok condition.",
+      "price": 7500,
+      "year": 2005,
+      "category": 1,
+      "condition": "Ok",
+      "image_url": "/media/rolexexplorer2.jpg",
+      "image": "rolexexplorer2.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "r5",
+      "brand": "Rolex",
+      "name": "Sky Dweller",
+      "description": "New from the box, stored in original box since 2011. Looks like new.",
+      "price": 29500,
+      "year": 2011,
+      "category": 1,
+      "condition": "New",
+      "image_url": "/media/rolexsky.jpg",
+      "image": "rolexsky.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "r6",
+      "brand": "Rolex",
+      "name": "GMT-Master",
+      "description": "”Worn in the military by its former owner. Great working movement and overall good condition",
+      "price": 8200,
+      "year": 1986,
+      "category": 1,
+      "condition": "Good",
+      "image_url": "/media/rolexgmtmaster.jpg",
+      "image": "rolexgmtmaster.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "r7",
+      "brand": "Rolex",
+      "name": "Submariner",
+      "description": "Beautiful patina and charming becel. Crown is changed and newly restored",
+      "price": 8400,
+      "year": 1986,
+      "category": 1,
+      "condition": "Good",
+      "image_url": "/media/rolexsubmariner1.pg",
+      "image": "rolexsubmariner1.jpg"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "o8",
+      "brand": "Omega",
+      "name": "Flightmaster",
+      "description": "Extremely rare watch with all papers included. Nice patina on bracelet and bacel.",
+      "price": 1900,
+      "year": 1969,
+      "category": 2,
+      "condition": "Ok",
+      "image_url": "/media/omegaflight.jpg",
+      "image": "omegaflight.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "o9",
+      "brand": "Omega",
+      "name": "Sea Master",
+      "description": "Newly restored and works perfect. Bracelet is replaced to leather.",
+      "price": 2500,
+      "year": 1962,
+      "category": 2,
+      "condition": "Good",
+      "image_url": "/media/omegaseamaster.jpg",
+      "image": "omegaseamaster.jpg"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "o10",
+      "brand": "Omega",
+      "name": "Marine",
+      "description": "1/300 produced Omega Marine from 1932. Worlds first dive watch.",
+      "price": 56000,
+      "year": 1932,
+      "category": 2,
+      "condition": "Ok",
+      "image_url": "/media/omegamarine.jpg",
+      "image": "omegamarine.jpg"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "o11",
+      "brand": "Omega",
+      "name": "Constellation",
+      "description": "Beautiful piece from 1968 and in good condition. Comes with all papers included",
+      "price": 2900,
+      "year": 1968,
+      "category": 2,
+      "condition": "Good",
+      "image_url": "/media/omegaconst.jpg",
+      "image": "omegaconst.jpg"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "sku": "o12",
+      "brand": "Omega",
+      "name": "Speedmaster",
+      "description": "New from the box and never worn. Overall perfect condition",
+      "price": 20000,
+      "year": 1970,
+      "category": 2,
+      "condition": "Perfect",
+      "image_url": "/media/omegaspeedmaster.jpg",
+      "image": "omegaspeedmaster.jpg"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "sku": "p13",
+      "brand": "Patek Philippe",
+      "name": "Geneve Nautilus",
+      "description": "Replaced hands and bracelet. Ok condition",
+      "price": 13500,
+      "year": 1990,
+      "category": 3,
+      "condition": "Ok",
+      "image_url": "/media/patekgeneve.jpg",
+      "image": "patekgeneve.jpg"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "sku": "p14",
+      "brand": "Patek Philippe",
+      "name": "Nautilus",
+      "description": "New from the box and in perfect condition. Very unique",
+      "price": 29045,
+      "year": 1994,
+      "category": 3,
+      "condition": "Perfect",
+      "image_url": "/media/pateknautilus.jpg",
+      "image": "pateknautilus.jpg"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "sku": "p15",
+      "brand": "Patek Philippe",
+      "name": "Nautilus calender",
+      "description": "Big and heavy nautilus with calender compilation. Date and moon phase displayed on dial",
+      "price": 49000,
+      "year": 2000,
+      "category": 3,
+      "condition": "Good",
+      "image_url": "/media/patekcalender.jpg",
+      "image": "patekcalender.jpg"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.product",
+    "fields": {
+      "sku": "p16",
+      "brand": "Patek Philippe",
+      "name": "Geneve Calatrava",
+      "description": "Nice patinated clean Calatrava with small second hands. Ok condition with leather strap",
+      "price": 4200,
+      "year": 1967,
+      "category": 3,
+      "condition": "Ok",
+      "image_url": "/media/patekcalatrava2.jpg",
+      "image": "patekcalatrava2.jpg"
+    }
+  }
+]
