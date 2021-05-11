@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 <!-- Buy now button -->
-                <form class="form" action="" method="POST">
+                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <hr>
                     <div class="text-center">
