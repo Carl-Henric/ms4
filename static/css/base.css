@@ -57,7 +57,25 @@ p {
     color: #424642 !important;
 }
 
+.greybutton {
+    background-color: #536162;
+    text-transform: uppercase;
+    color: #f3f4ed;
+    padding: 7px;
+    margin: 5px;
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
 
+.greybutton:hover {
+    background-color: #c06014;
+    color: #f3f4ed;
+    text-decoration: none;
+}
 
 .vintagered {
     background-color: #c06014;
@@ -91,7 +109,8 @@ p {
 
 .addtobutton:hover {
     background-color: #c06014;
-    font-weight: 700;
+    color: #f3f4ed;
+    text-decoration: none;
 }
 
 .navbar {

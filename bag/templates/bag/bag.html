@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col pt-3">
-                <h2>Shopping Bag</h2>
+                <h2 class="text-center">Shopping Bag</h2>
             </div>
         </div>
 
@@ -21,7 +21,52 @@
             <div class="col">
                 {% if bag_items %}
                     <div class="table-responsive">
-                        {{ bag_items }}
+                        <div class="table-responsive">
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Condition</th>
+                                        <th scope="col">Price</th>
+                                        <hr>
+                                    </tr>
+                                </thead>
+                                {% for item in bag_items %}
+                                <tr>
+                                    <td class="p-3 w-25 align-middle">
+                                        <img src="{{ item.product.image.url }}" class="img-fluid">
+                                    </td>
+                                    <td class="py-3 align-middle">
+                                        <p class="my-0">{{ item.product.year }}´s {{ item.product.brand }} {{ item.product.name }}</p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>                    
+                                        <td class="py-3 align-middle">
+                                        <p class="my-0">{{ item.product.condition }}</p>
+                                    </td>
+                                        <td class="py-3 align-middle">
+                                        <p class="my-0">$ {{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td colspan="5" class="pt-5 text-right">
+                                        <hr>
+                                        <p class="bigfont">Total: <strong>$ {{ total|floatformat:2 }}</strong></p>
+                                        
+                                    </td>
+                                </tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="greybutton mr-2">
+                                      <i class="fas fa-arrow-left"></i> Go back to all watches
+                                    </a>
+                                    <a href="{% url 'products' %}" class="addtobutton">
+                                        Checkout <i class="fas fa-arrow-right"></i>
+                                    </a>
+
+                                </td>
+                            </table>
+                        </div>
                     </div>
                 {% else %}
                 <p class="bigfont">Your bag has no watches yet, see all watches <a href="{% url 'products' %}"> here</a></p>
