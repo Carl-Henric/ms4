@@ -12,19 +12,18 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col pt-3">
                 <h2>Shopping Bag</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                {% if bag bag_items %}
+                {% if bag_items %}
                     <div class="table-responsive">
                     </div>
                 {% else %}
-                <p class="bigfont">Your bag has no watches yet, see all watches <a href="{% url 'products' %}"></a> here</p>
-
+                <p class="bigfont">Your bag has no watches yet, see all watches <a href="{% url 'products' %}"> here</a></p>
                 {% endif %}
             </div>
         </div>
