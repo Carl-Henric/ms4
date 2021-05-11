@@ -33,6 +33,20 @@
                             <strong>Year: </strong>{{ product.year }}
                         </div>
                     </div>
+                <!-- Buy now button -->
+                <form class="form" action="" method="POST">
+                    {% csrf_token %}
+                    <hr>
+                    <div class="text-center">
+                    <input type="submit" class="addtobutton" value="Add to bag">
+                    </div>
+                    <hr>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+                    <a href="{% url 'products' %}" class="bigfont oldgrey">
+                       <i class="fas fa-arrow-left"></i>  Discover all watches
+                    </a>
+                <!-- End of Buy now button -->
                 </div>
             </div>
         </div>
