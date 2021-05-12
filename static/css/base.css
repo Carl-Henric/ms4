@@ -57,6 +57,17 @@ p {
     color: #424642 !important;
 }
 
+.bg-oldgrey {
+    background-color: #424642 !important;
+}
+
+.bg-lightgrey {
+    background-color: #536162 !important;
+}
+
+
+
+
 .greybutton {
     background-color: #536162;
     text-transform: uppercase;

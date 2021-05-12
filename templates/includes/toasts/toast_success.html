@@ -7,5 +7,26 @@
   </div>
   <div class="toast-body">
     {{ message }}
+    <hr>
   </div>
+
+    <div class="container">
+        {% for item in bag_items %}
+        <div class="row align-middle">
+            <div class="col-4 my-1 align-middle">
+                <img src="{{ item.product.image.url }}" class="w-100" alt="">
+            </div>
+            <div class="col-4 my-1 align-middle">
+                <p class="small">{{ product.brand }} {{ product.name }}</p>
+            </div>
+            <div class="col-4 my-1 align-middle">
+                <p class="small">${{ product.price }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
+        <div class="text-right">
+            <p><strong>Total:</strong>  {{ total}}</p>
+        </div>
+    </div>
 </div>
