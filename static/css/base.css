@@ -121,6 +121,12 @@ p {
 .bigfont {
     font-size: 18px;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /*-------------------- Media Queries */
 @media (max-width: 992px){
     .mobile-font {

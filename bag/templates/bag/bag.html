@@ -40,13 +40,17 @@
                                     <td class="py-3 align-middle">
                                         <p class="my-0">{{ item.product.year }}´s {{ item.product.brand }} {{ item.product.name }}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        <a class="remove-item align-middle small" id="remove_{{ item.item_id }}">Remove <i class="fas fa-minus-circle text-danger"></i></a>
                                     </td>                    
-                                        <td class="py-3 align-middle">
+                                    <td class="py-3 align-middle">
                                         <p class="my-0">{{ item.product.condition }}</p>
                                     </td>
+                                    <form class="form update-form">
+                                        {% csrf_token %}
                                         <td class="py-3 align-middle">
-                                        <p class="my-0">$ {{ item.product.price }}</p>
-                                    </td>
+                                            <p class="my-0">$ {{ item.product.price }}</p> 
+                                        </td>
+                                    </form>
                                 </tr>
                                 {% endfor %}
                                 <tr>
@@ -74,4 +78,25 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript">
+        // Adjusted script from Boutique Ado project //
+
+        $('.remove-item').click(function(e){
+            var csrfToken = "{{ csrf_token }}"
+            var ItemId = $(this).attr('id').split("remove_")[1];
+            console.log($(this));
+            console.log(ItemId)
+            var url = `/bag/remove/${ItemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
+
+            $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+        })
+    </script>
 {% endblock %}
