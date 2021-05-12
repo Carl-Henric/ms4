@@ -73,7 +73,9 @@
                         </div>
                     </div>
                 {% else %}
-                <p class="bigfont">Your bag has no watches yet, see all watches <a href="{% url 'products' %}"> here</a></p>
+                <div class="container">
+                    <p class="bigfont">Your bag has no watches yet, see all watches <a href="{% url 'products' %}"> here</a></p>
+                </div>
                 {% endif %}
             </div>
         </div>
