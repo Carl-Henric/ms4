@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
+
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
@@ -17,6 +18,7 @@ class OrderAdmin(admin.ModelAdmin):
             'postcode', 'town_or_city',
             'street_address1', 'street_address2',
             'county', 'order_total',)
+
 
     list_display = ('order_number', 'date', 'full_name', 'order_total',)
     

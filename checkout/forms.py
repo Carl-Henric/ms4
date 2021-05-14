@@ -1,12 +1,13 @@
 from django import forms
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                     'town_or_city', 'postcode', 'country',
-                    'county',)
+                    'county', 'street_address1', 'street_address2')
 
     def __init__(self, *args, **kwargs):
         """Adding placeholders and classes and deleting labels and set focus on first field"""
@@ -30,6 +31,6 @@ class OrderForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'striple-style-input'
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
 
