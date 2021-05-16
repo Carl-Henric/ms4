@@ -11,11 +11,33 @@ selling Rolex, Omega and Patek Phillipe beacuse they have the most strong purcha
  
 ## Strategy
 ### Business objective 
+1. As a site owner, I want to offer a eCommerce that ensures that all payment is safe for all parts.
+2. As a site owner, I want the visual impression to be serious and reliable. 
+3. As a site owner, I want the user to know how to forward in the funnel in all steps until completed purchase. 
+4. As a site owner, I want it to be easy for me as admin to add more products.
+
 ### User Stories 
+1. As a user, I want to know how to proceed my purchase in all steps. 
+2. As a user, I want it to be clearly what kind of watches the eCommerce offers. 
+3. As a user, I want to feel secure with the payment. 
+4. As a user, I want it to be easy to contact the site owner. 
 
 ## Scope
-### Current Features
-### Upcoming Features
+### Features
+#### Current Features
++ Navigaton bar on desktop
++ Hamburger navigation-menu on mobile devices
++ Shopping cart in header visible on all pages and all devices. 
++ Profile icon/link in header on desktop visible on all pages.  
++ Profile icon/link in hamnburger menu  on mobile devices. 
++ Profile icon/link in header on desktop visible on all pages.  
++ Categories for Rolex, Omega, Patek Philippe and All watches.
+
+
+
+
+
+####   Upcoming Features
 
 ## Structure
 ## Skeleton
