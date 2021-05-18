@@ -23,7 +23,6 @@ def bag_contents(request):
         })
 
     grand_total = total
-    print(grand_total)
 
     context = {
         'bag_items': bag_items,

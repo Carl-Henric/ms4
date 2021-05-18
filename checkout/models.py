@@ -27,7 +27,7 @@ class Order(models.Model):
 
     def update_total(self):
         """ Update total for each watch is added """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -47,6 +47,8 @@ class OrderLineItem(models.Model):
 
     def save(self, *args, **kwargs):
         """ Overriding the save method to set the order number if it dosen´t have set any already """
+        self.lineitem_total = self.product.price
+        super().save(*args, **kwargs)
    
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
