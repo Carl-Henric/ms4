@@ -7,10 +7,12 @@
   </div>
   <div class="toast-body">
     {{ message }}
-    <hr>
+ 
   </div>
 
     <div class="container">
+    {% if total and not on_profile_page %}
+       <hr>
         {% for item in bag_items %}
         <div class="row align-middle">
             <div class="col-4 my-1 align-middle">
@@ -23,10 +25,12 @@
                 <p class="small">${{ product.price }}</p>
             </div>
         </div>
-        {% endfor %}
-        <hr>
-        <div class="text-right">
+            <hr>
+            <div class="text-right">
             <p><strong>Total:</strong>  {{ total}}</p>
         </div>
+        {% endfor %}
+    {% endif %}
+  
     </div>
 </div>

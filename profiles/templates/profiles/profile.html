@@ -19,9 +19,41 @@
     <div class="container">
         <div class="row">
             <div class="col pt-5">
-                <h2 class="text-center">My profile</h2>
+                <h2 class="text-center">{{ profile }}´s profile</h2>
                 <p class="small text-center">Here is all your information.</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="bigfont">Default delivery information</p>
+                <form class="mt-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="greybutton">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="bigfont">Recent Orders</p>
+                {{ orders }}
+            </div>
+        </div>
         {{ profile }}
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        let countrySelected = $('#id_default_country').val();
+        if(!countrySelected) {
+            $('#id_default_country').css('color', '#aab7c4');
+        };
+        $('#id_default_country').change(function() {
+            countrySelected = $(this).val();
+            if (!countrySelected) {
+                $(this).css('color', '#aab7c4');
+            } else {
+                $(this).css('color', '#424642');
+            }
+        });
+    </script>
 {% endblock %}
