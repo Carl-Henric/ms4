@@ -65,7 +65,18 @@ p {
     background-color: #536162 !important;
 }
 
-
+.orangebutton {
+    background-color: #c06014;
+    text-transform: uppercase;
+    color: #f3f4ed;
+    padding: 7px;
+    margin: 5px;
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    margin: auto;
+    text-align: center;
+}
 
 
 .greybutton {
@@ -78,8 +89,13 @@ p {
     font-size: 15px;
     border: none;
     margin: auto;
-    width: 80%;
     text-align: center;
+}
+
+.orangebutton:hover {
+    background-color: #536162;
+    color: #f3f4ed;
+    text-decoration: none;
 }
 
 .greybutton:hover {
