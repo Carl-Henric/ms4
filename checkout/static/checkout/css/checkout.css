@@ -37,6 +37,17 @@
     border: 1px solid #000;
 }
 
+/* General css */
+select, 
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 /* Css from Boutique ado project */
 #loading-overlay {
 	display: none;
