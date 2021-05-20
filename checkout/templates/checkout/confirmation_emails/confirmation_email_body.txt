@@ -1,0 +1,26 @@
+Hello {{ order.full_name }},
+
+This is your confirmation for your purchase at Old And Gold. 
+I hope you will enjoy your watch and welcome back when your about to buy your next vintage watch. 
+
+Here is your order information:
+Order number: {{ order.order_number }}
+Order date: {{ order.date }}
+
+
+Shipping details:
+{{ order.street_address1 }}
+{{ order.postcode }}
+{{ order.town_or_city }}
+{{ order.country }}
+
+Phone number: {{ order.phone_number }}
+
+Kindly check so that your information is correct, if not, contact us at {{ contact_email }} and we will fix it. 
+
+Again, thank you for your order. 
+
+Enjoy your new watch, and welcome back. 
+
+/
+Carl-Henric at Old And Gold. 
