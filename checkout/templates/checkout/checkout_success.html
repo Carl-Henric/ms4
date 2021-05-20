@@ -179,6 +179,11 @@
                             <h5>$ {{ order.order_total }}</h5>
                         </div>
                     </div>
+                    <div class="row">
+                        {% if from_profile %}
+                            <a href="{% url 'profile' %}"><button class="greybutton">Back to profile page</button></a>
+                        {% endif %}
+                    </div>
 
                 </div>
             </div>

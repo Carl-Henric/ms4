@@ -19,13 +19,13 @@
     <div class="container">
         <div class="row">
             <div class="col pt-5">
-                <h2 class="text-center">{{ profile }}´s profile</h2>
+                <h2 class="text-center">Your profile</h2>
                 <p class="small text-center">Here is all your information.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p class="bigfont">Default delivery information</p>
+                <p class="bigfont pt-2 text-center">Default delivery information</p>
                 <form class="mt-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -33,11 +33,48 @@
                 </form>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="bigfont">Recent Orders</p>
-                {{ orders }}
+                <div class="table-responsive bg-light p-2">
+                    <table class="table table-sm table-borderless">
+                        <p class="bigfont pt-2 text-center">Recent Orders</p>
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Watch</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}" class="small">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+                                <td><p class="small">{{ order.date }}</p></td>
+                                <td>
+
+                                    {% for item in order.lineitems.all %}
+                                    <p class="small">{{ item.product.year }}´s {{ item.product.brand }} {{ item.product.name }}</p>
+                                    {% endfor %}
+
+                                </td>
+                                <td>
+                                    {% for item in order.lineitems.all %}
+                                    <p class="small">{{ item.product.price }}</p>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <hr>
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
             </div>
         </div>
-        {{ profile }}
 {% endblock %}
 
 {% block postloadjs %}
