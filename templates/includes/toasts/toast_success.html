@@ -16,10 +16,10 @@
         {% for item in bag_items %}
         <div class="row align-middle">
             <div class="col-4 my-1 align-middle">
-                {% if item.product.image %}
-                 <img src="{{ item.product.image.url }}" class="w-100" alt="{{ item.product.name }}">
+                {% if product.image %}
+                 <img src="{{ product.image.url }}" class="w-100" alt="{{ product.name }}">
                 {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.jpg" class="w-100" alt="{{ item.product.name }}">
+                    <img src="{{ MEDIA_URL }}noimage.jpg" class="w-100" alt="{{ product.name }}">
                 {% endif %}
             </div>
             <div class="col-4 my-1 align-middle">
