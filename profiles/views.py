@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from django.contrib import messages
 
 from .models import UserProfile
@@ -15,8 +15,10 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Updated profile successfully!')
-
-    form = UserProfileForm(instance=profile)
+        else:
+            messages.error(request, 'Failed to update profile, check your form input and try again.')     
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
