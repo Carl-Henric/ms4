@@ -24,7 +24,13 @@
                     {% for product in products %}
                     <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 p-2 text-center">
                         <div class="card h-100 p-3 border-0">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% if request.user.is_superuser %}
+                                <p class="text-right">
+                                    <a href="{% url 'edit_product' product.id %}" class="bg-light p-2 text-success">Edit <i class="fas fa-pen ml-2"></i></a>
+                                    <a href="{% url 'delete_product' product.id %}" class="bg-light p-2 text-danger">Delete <i class="fas fa-minus-circle ml-2"></i></a>
+                                </p>
+                            {% endif %}
+                            <img src="{{ product.image.url }}" class="w-100" alt="{{ item.product.name }}">
                             <a href="{% url 'product_detail' product.id %}" class="oldgrey"><h5 class="font-weight-bold">{{ product.year }}'s {{ product.brand }} {{ product.name }}</h5></a>
                             <p>$ {{ product.price }}</p>
                         </div>

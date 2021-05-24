@@ -20,7 +20,7 @@ def all_products(request):
             categories = Category.objects.filter(name__in=categories)
 
     context = {
-        'products': products, 
+        'products': products,
         'current_categories': categories,
     }
     
@@ -44,9 +44,9 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Product successfully added!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Check your form input and try again.')
     else: 
@@ -58,7 +58,6 @@ def add_product(request):
     }
 
     return render(request, template, context)
-
 
 
 def edit_product(request, product_id):
@@ -83,3 +82,12 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ Deleting a product """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted')
+    return redirect(reverse('products'))
+

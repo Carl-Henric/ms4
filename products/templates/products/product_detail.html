@@ -21,6 +21,12 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 bg-white py-1">
                 <div class="py-2">
+                    {% if request.user.is_superuser %}
+                                <p class="text-right">
+                                    <a href="{% url 'edit_product' product.id %}" class="bg-light p-2 text-success">Edit <i class="fas fa-pen ml-2"></i></a>
+                                    <a href="{% url 'delete_product' product.id %}" class="bg-light p-2 text-danger">Delete <i class="fas fa-minus-circle ml-2"></i></a>
+                                </p>
+                    {% endif %}
                     <h2>{{ product.brand }} {{ product.name }}</h2>
                     <h5 class="font-weight-bold">$ {{ product.price }}</h5>
                     <hr>
