@@ -13,7 +13,12 @@
     <div class="container-fluid bg-light pt-5">
         <div class="row">
             <div class="col text-center">
-                <h2>All Watches </h2>
+                {% if not current_categories %}
+                    <h2>All Watches</h2>
+                {% endif %}
+                {% for brand in current_categories %}
+                    <h2><a href="{% url 'products' %}?category={{ brand.name }}"></a>{{ brand.name }}</h2>
+                {% endfor %}
             </div>
         </div>
         <!-- Product card-->
