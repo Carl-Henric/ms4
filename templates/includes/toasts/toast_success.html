@@ -1,40 +1,36 @@
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+<div class="toast rounded-0 shadow border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
   <div class="toast-header bg-success">
-    <strong class="mr-auto text-white"><i class="fas fa-check"></i> Success!</strong>
-    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+    <strong class="mr-auto text-white bigfont"><i class="fas fa-check"></i> Success!</strong>
+    <button type="button" class="ml-2 mb-1 close text-white" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
     {{ message }}
- 
   </div>
 
-    <div class="container">
-    {% if total and not on_profile_page %}
-       <hr>
-        {% for item in bag_items %}
-        <div class="row align-middle">
-            <div class="col-4 my-1 align-middle">
-                {% if product.image %}
-                 <img src="{{ product.image.url }}" class="w-100" alt="{{ product.name }}">
-                {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.jpg" class="w-100" alt="{{ product.name }}">
-                {% endif %}
-            </div>
-            <div class="col-4 my-1 align-middle">
-                <p class="small">{{ product.brand }} {{ product.name }}</p>
-            </div>
-            <div class="col-4 my-1 align-middle">
-                <p class="small">${{ product.price }}</p>
-            </div>
-        </div>
-            <hr>
-            <div class="text-right">
-            <p><strong>Total:</strong>  {{ total }}</p>
-        </div>
-        {% endfor %}
-    {% endif %}
-  
-    </div>
+        {% if total and not on_profile_page %}
+        <hr>
+            {% for item in bag_items %}
+                <div class="row align-middle">
+                    <div class="col-4 my-1 align-middle">
+                        <img src="{{ item.product.image.url }}" class="w-100" alt="{{ product.name }}">
+                    </div>
+                    <div class="col-4 my-0 align-middle">
+                        <p class="small">{{ item.product.brand }} {{ item.product.name }}</p>
+                    </div>
+                    <div class="col-4 my-0 align-middle">
+                        <p class="small">$ {{ item.product.price }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <hr class="dotted">
+                <div class="text-right mr-2">
+                    <p><strong>Total:</strong> $ {{ total }}</p>
+                </div>
+                <div class="text-center">
+                    <a href="{% url 'view_bag' %}"><button class="buybutton">Go to checkout <i class="fas fa-arrow-right"></i></button></a>
+                </div>
+
+        {% endif %}
 </div>

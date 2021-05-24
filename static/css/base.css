@@ -120,6 +120,24 @@ p {
 
 }
 
+.buybutton {
+    background-color: #c06014;
+    text-transform: uppercase;
+    color: #f3f4ed;
+    padding: 7px;
+    margin: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.buybutton:hover {
+    background-color: #424642;
+}
+
 .addtobutton {
     background-color: #424642;
     text-transform: uppercase;
