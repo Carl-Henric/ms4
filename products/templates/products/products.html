@@ -23,7 +23,7 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 p-2 text-center">
-                        <div class="card h-100 p-3 border-0">
+                        <div class="card h-100 p-3 border-0 shadow-sm">
                             {% if request.user.is_superuser %}
                                 <p class="text-right">
                                     <a href="{% url 'edit_product' product.id %}" class="bg-light p-2 text-success">Edit <i class="fas fa-pen ml-2"></i></a>
