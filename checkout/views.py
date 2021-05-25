@@ -34,6 +34,7 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -70,10 +71,16 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
-        else:
-            messages.error(request, 'Oops, there was an error with your form, Please check your information')
+                request.session['save_info'] = 'save-info' in request.POST
+                
+                bag = request.session.get('bag', {})
+                for product_id, product_data in bag.items():
+                    product = Product.objects.get(id=product_id)
+                    product.is_sold = True
+                    product.save()
+                return redirect(reverse('checkout_success', args=[order.order_number]))
+            else:
+                messages.error(request, 'Oops, there was an error with your form, Please check your information')
 
     else:
         bag = request.session.get('bag', {})

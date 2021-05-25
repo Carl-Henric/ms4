@@ -21,8 +21,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=1)
     year = models.DecimalField(max_digits=4, decimal_places=0)
     condition = models.CharField(max_length=100)
-    image_url = models.URLField(max_length=1024)
-    image = models.ImageField()
+    image_url = models.URLField(max_length=1024, blank=False, null=True)
+    image = models.ImageField(blank=False, null=True)
+    is_sold = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

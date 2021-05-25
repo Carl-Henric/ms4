@@ -10,7 +10,7 @@ from .forms import ProductForm
 def all_products(request):
     """ Displaying all products """
 
-    products = Product.objects.all()
+    products = Product.objects.filter(is_sold=False)
     categories = None
 
     if request.GET:
@@ -23,7 +23,7 @@ def all_products(request):
         'products': products,
         'current_categories': categories,
     }
-    
+
     return render(request, 'products/products.html', context)
 
 
