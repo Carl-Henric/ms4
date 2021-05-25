@@ -40,6 +40,7 @@
                         </div>
                     </div>
                 <!-- Buy now button -->
+                {% if not is_sold %}
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <hr>
@@ -49,6 +50,7 @@
                     <hr>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
+                {% endif %}
                     <a href="{% url 'products' %}" class="bigfont oldgrey">
                        <i class="fas fa-arrow-left"></i>  Discover all watches 
                     </a>
