@@ -47,6 +47,33 @@ h4 {
     padding-bottom: 20px;
 }
 
+.hero {
+    height: 500px;
+    margin: auto;
+}
+
+.herocontent {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: auto;
+
+}
+
+.herocontent h2 {
+    font-family: 'Satisfy', cursive !important;
+}
+
+.heroimage {
+    background-image: url(/media/vintageshop.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
 .roleximage {
     background-image: url(/media/rolexsubmariner1.jpg);
     background-color: rgba(255, 255, 255, 0.5);

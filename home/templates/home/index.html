@@ -11,18 +11,17 @@
 
 {% block content %}
 <div class="hero">
-    <div class="row">
-        <div class="col-6">
-            <img src="/media/pexels-pixabay-47856.jpg" class="images" alt="">
-        </div>
-        <div class="col-6">
-            <h2 class="align-middle">Unique vintage watches</h2>
-            <h3>- Exclusive pieces from Rolex, Omega and Patek.</h3>
-            <p>Old And Gold offers 100% authentic watches. There is only one of each watch. </p>
-            <a href="{% url 'products' %}" class="cta-button">See all watches <i
-                    class="fas fa-arrow-circle-right"></i></a>
+
+    <div class="heroimage">
+        <div class="herocontent shadow text-center">
+            <h2>Welcome to Old And Gold</h2>
+            <p class="bigfont">Exclusive pieces from Rolex, Omega and Patek.</p>
+            <p>Old And Gold offers 100% authentic watches. There is only one of each watch <br> and the collection is rare and hackpicked from all corners fo the world. </p>
+            <a href="{% url 'products' %}" class="greybutton">See all watches
+                <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
+
 </div>
 <div class="staffpicks">
     <h2 class="text-center">Our Collection</h2>
