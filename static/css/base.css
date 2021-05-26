@@ -10,7 +10,7 @@ html {
 } 
 
 .images {
-    width: 100%;
+    width: 50%;
 }
 
 .logo {
@@ -34,6 +34,7 @@ h2 {
 h4 {
     font-family: 'Satisfy', cursive !important;
     font-weight: 300;
+    font-size: 30px;
 }
 
 .beige {
@@ -44,6 +45,47 @@ h4 {
 .staffpicks {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.roleximage {
+    background-image: url(/media/rolexsubmariner1.jpg);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.omegaimage {
+    background-image: url(/media/omegaflight.jpg);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.patekimage {
+    background-image: url(/media/patekgeneve.jpg);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bgoverlay {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+
+}
+
+.bgoverlay p {
+    width: 50%;
+    margin: auto;
+    font-size: 15px;
+    line-height: 25px
 }
 
 
@@ -218,8 +260,14 @@ p {
 
     .logo {
     font-size: 15px;
+    }
 
-}
+    .bgoverlay p {
+    width: 80%;
+    margin: auto;
+    font-size: 15px;
+    line-height: 25px
+    }
 
 }
 @media (min-width: 992px) {
