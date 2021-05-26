@@ -63,37 +63,93 @@ The site is build to have a light but serious touch. It should be easy for the u
 
 ## Structure
 The site consists of:
-+ **Homepage**
++ **Home**
 
     Introduce the concept of Old & Gold for the first time visitor and what to expect for the visit. 
     Helps the user forward in to the site.  
     ***
-+ Categories (All watches, Rolex, Omega and Patek Philippe)
++ **Categories** (All watches, Rolex, Omega and Patek Philippe)
  
     There is four categories where the watches is displayed. Due to the small assortment I wanted to keep it easy for the user to find the watches. 
     I kept the categories linked to the brand and not to the uses for the watch. 
     ***
-+ Product detail
++ **Product detail**
 
     The product detail page displays all the info about each watch. I wanted the info about each watch to be shorthanded and easy to understand but with all the required info clear to the user. 
     The most important info for a vintage watch is year, condition and price. 
     ***
     
-+ Shopping bag
-+ Checkout
-+ Checkout success
-+ Profile
-+ Product management (For Admin/Superuser)
++ **Shopping bag**
+    
+    The most relevant information is displayed in the shopping bag, and the total amount. The possibillity exists to remove product from cart, and return to all watches. 
+    ***
++ **Checkout**
+
+    Crispy forms form with all personal and shipping details is displayed. Stripe payment with webhooks is used to secure the checkout process. 
+    ***
++ **Checkout success**
+
+    The user redirects to a checkout success page where  the user information is stored and displayed to the customer. 
+    ***
++ **Profile**
+
+    The profile page stores the user information and order history for the user. 
+    ***
++ **Product management** (For Admin/Superuser)
+
+    The product management page makes is poissible for the admin to add more products to the shop. 
+    ***
 
 
 ## Skeleton
 ### Wireframes
 
+**Home**
+ ![Home](/media/wireframes/home.png "Home")
+ ***
+ **Products**
+ ![Products](/media/wireframes/products.png "Products")
+ ***
+ **Details**
+ ![Details](/media/wireframes/details.png "Details")
+ ***
+ **Cart**
+ ![Cart](/media/wireframes/cart.png "Cart")
+ ***
+ **Checkout**
+ ![Checkout](/media/wireframes/checkout.png "Checkout")
+ ***
+ **Checkout success**
+ ![Checkout Success](/media/wireframes/confirmation.png "Checkout success")
+ ***
+ **Profile**
+ ![Profile](/media/wireframes/profile.png "Profile")
+ ***
+
 ## Surface
+My main goal with the design was to make the homepage feel serious with a glimpse of vintage. The products in the shop so the overall feeling of the site has to be confidence-inspiring.
+
 ### Design 
+
+The main reason for the visitors are to see the watches, so all images are in big sizes and the information about the watches are more laidback. 
 #### Colours
+The main theme of the colours are off white, blue grey, dark grey and orange. See picture below:<br>
+ ![Colors](/media/colours.png "Colours"). <br>
+ Color scheme comes from [color hunt](https://colorhunt.co/palette/264862) 
+ ***
+
 #### Fonts
+
+The fonts that have been used comes from [Google fonts](https://fonts.google.com/).<br>
+**Headings**: Satisfy<br>
+**Paragraphs/buttons**: Roboto Condensed
+*** 
 #### Images 
+All product images are big and crispy and really shows the beuty in every watch. For such a visually beautiful product, images are required that highlights it.
+***
+#### Icons
+All icons on the site comes from  [Font Awesome](https://fontawesome.com/).
+***
 
 
 # Information Architecture 
