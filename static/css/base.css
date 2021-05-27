@@ -13,6 +13,10 @@ html {
     width: 50%;
 }
 
+.image-container img {
+    width: 100%;
+}
+
 .logo {
     font-family: 'Satisfy', cursive !important;
     font-size: 35px;
