@@ -154,14 +154,41 @@ All icons on the site comes from  [Font Awesome](https://fontawesome.com/).
 
 # Information Architecture 
 ## Database Choice
+Under the development part, the default Django SQLight database where used. And in the deplyment part, the Heroku Add-on PostgreSQL where used. 
 ## Data modelling  
-
+Categories and Products have been used as fixtures and are in Json format. 
+![schema](/media/schema.png "db schema")
 # Accessability
-## alt-tags
-
+## alt-tags on images
+For accessability have alt-tags been implemented on all images. Partly because of the user-friendliness for the visually impaired and partly for Google indexing the page. 
 # Technologies used
 ## Languages used  
-## Frameworks, Libaries and Programs  
+- HTML 
+- CSS
+- Javascript
+- Python
+
+## Frameworks used
+- Boootstrap
+- Django
+- jQuery  
+
+## Storage/Database
+- Django SQLight (database under the development part, before deployment to Heroku) 
+- Heroku PostgreSQL (database)
+- Aamazon Web Services (storing static and media files)
+
+## Storing, editing and deploying
+- Gitpod
+- Github
+- Heroku
+
+## Other
+- Stripe Payments
+- Django Allauth
+- Django Crispy forms 
+- Balsamiq
+- Beutifier
 
 # Testing  
 
@@ -171,3 +198,10 @@ All icons on the site comes from  [Font Awesome](https://fontawesome.com/).
 ## Local Deployment
 
 # Credits   
+
+### Images
+- Thanks to Kaplans Auktioner in Sweden for letting me use their pictures in this project. <br>
+- Hero picture from [Pexels](https://www.pexels.com/sv-se/foto/stad-gata-byggnad-hus-2309235/).
+
+### Tutorials
+A big guidance in this project has been Boutique Ado from Code Institute. 
