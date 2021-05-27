@@ -10,7 +10,7 @@ from products.models import Product
 from profiles.models import UserProfile
 
 class Order(models.Model):
-    order_number = models.CharField(max_length=30, null=False, editable=False)
+    order_number = models.CharField(max_length=40, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
