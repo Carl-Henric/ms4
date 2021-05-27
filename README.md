@@ -24,9 +24,9 @@ The primary goal wiith this eCommerce is to have a small selection of unique vin
 1. As a user, I want to know how to proceed my purchase in all steps. 
 2. As a user, I want it to be clearly what kind of watches the eCommerce offers. 
 3. As a user, I want to feel secure with the payment. 
-4. As a user, I want it to be easy to contact the site owner. 
-5. As a user, I want to be able to read more about the watches.  
-6. As a user, I want to have a profile page that collect my recent purchases.
+4. As a user, I want to be able to read more about the watches.  
+5. As a user, I want to have a profile page that collect my recent purchases.
+6. As a user, I want it to be easy to find all the products. 
 
 ## Scope
 The site is build to have a light but serious touch. It should be easy for the user to see what watches there is in stock. I wanted the site to be serious but not too stiff and boring, and wioth a small touch on vintage boutique. 
@@ -60,6 +60,7 @@ The site is build to have a light but serious touch. It should be easy for the u
 + More payment alternatives. 
 + Online auctions. 
 + More brands. 
++ Compress all the images. 
 
 ## Structure
 The site consists of:
@@ -191,10 +192,194 @@ For accessability have alt-tags been implemented on all images. Partly because o
 - Beutifier
 
 # Testing  
+### Code validators
+I have used  [WS3](https://jigsaw.w3.org/) validators for both html and css. 
+
+#### Html:
+Passed all tests. 
+***
+
+#### CSS:
+Passed all tests. 
+***
+
+### Speed
+![speed](/media/speed2.png "Speed")
+
+The site speed is C which is ok. For better speed on the site, all images needs to be compressed for less weight. The can be more developed for faster loading. <br>
+The lack of time in the project had me to skip that. But it will be fix in future fixes.  
+
+### User Stories
+| As a/an        | I want/need to           | Testing  | Result  |
+| ------------- |-------------| -----|-----|
+| **Site Owner**    | to offer a eCommerce that ensures that all payment is safe for all parts. | Payment with Stripe and webhooks | Works as expected, Stripe collect all the transers and the order stored in the db.   |
+| **Site Owner**    | the visual impression to be serious and reliable.  | Have been tested it on some friends | The overall impression is good. |
+| **Site Owner**    | I want the user to know how to forward in the funnel in all steps until completed purchase. | There are contrasting buttons to help the user forward the funnel. Some firends tested to proceed a purchase. | works as expected, no misunderstandings.  |
+| **Site Owner**    | I want it to be easy for me as admin to add more products. | Tested added products via product management | Works as expected, products adds to the shop. |
+| **User**    | to know how to proceed my purchase in all steps. | Some friends tested to buy a watch without any instructions. |Works as expected, its all clearly what to do. |
+| **User**    | it to be clearly what kind of watches the eCommerce offers. | Made four nav items, for all watches, Rolex, Omega and Patek | all watches displays clearly in the categories |
+| **User**    | to feel secure with the payment. | Stripe is used for secure payments |Works as expected, everything works. |
+| **User**    | to be able to read more about the watches. | Product detail pages on all products |Works as expected, products details works fine. |
+| **User**    | to have a profile page that collect my recent purchases. | all registrated users have a profile page |Works as expected, all info saves and displays in profile. |
+| **User**    | it to be easy to find all the products. | All watches in menu displays all the products. |Works as expected, all watches shows. |
+
+***
+
+### Features
++ Navigaton bar on desktop
+    - Shows in all browsers.
++ Hamburger navigation-menu on mobile devices
+    - Displays and works on all mobile devices I have tested on with Google devolper tools. 
++ Shopping cart in header visible on all pages and all devices. 
+    - Visible on all pages and on all devices within Google dev tools.
++ Profile icon/link in header on desktop visible on all pages.  
+    - Visible on all pages.
++ Profile icon/link in hamnburger menu on mobile devices. 
+    - Displays and works correct. 
++ Profile icon/link in header on desktop visible on all pages.  
+    - Displays and works correct.
++ Categories for Rolex, Omega, Patek Philippe and All watches.
+    - Displays and works correct. 
++ Add watch to shopping bag.
+    - Works correct.
++ Delete a watch from shopping bag.
+    - Works correct, watch removes fom bag. 
++ Form with buyer/shipping details in checkoput. 
+    - Displays and works correct. 
++ Complete checkout functionality. 
+    - Works correct and remove purchased watch from the store. 
++ Secure payment with Stripe. 
+    - Works correct without any errors. 
++ Profile page with saved information. 
+    - Works correct, all relevant data for the user is stored. 
++ As admin, the ability to add a product. 
+    - Works correct from product management page. 
++ Confirmation mail when purchase is completed. 
+    - Works almost. The functionality is done but the smpt server isen´t correclty setup. 
+
+### Testing Enviroment
+- All tested is done by me, and when external users needed, then my friends helped me with that. <br>
+- Both desktop and mobile have been used within the tests, and Google dev tools.
+- All pages and functions have been tested during the project with Google dev tools for direct response for any upcoming erros. 
 
 # Deployment
 ## Heroku
+For deployment to Heroku, there is some steps you had to proceed to finally visiting your page. 
+When deploying this project to Heroku, following steps needed to be made. 
+1. Log in to Heroku and create a new app, called oldandgod. 
+2. Added PostgreSQL to my Heroku app with free license.
+3. At settings, reveal config vars. 
+    > **AWS_ACCESS_KEY_ID**: Your AWS Access key<br>
+    > **AWS_SECRET_ACCESS_KEY**: Your AWS Secret Access key<br>
+    > **DATABASE_URL**: Your PostgreSQL url<br>
+    > **SECRET_KEY**: Your Django secret key<br>
+    > **STRIPE_PUBLIC_KEY**: Your Stripe public key<br>
+    > **STRIPE_SECRET_KEY**: Your Stripe secret key<br>
+    > **STRIPE_WH_SECRET**: Your Stripe WH key<br>
+    > **USE_AWS**: True<br>
+    
+4. Open Gitpod. 
+5. Install guniron, psycopg2-binary and dj-database-url using pip3 install [name]. 
+6. Store them into requirements.txt with *pip3 freeze > requirements.tx*t. 
+7. Create a Procfile with the name of Procfile.py with *web: gunicorn oldandgold.wsgi:application* in it. 
+8. Push changes to github.
+9. For automatic deployment, go to deploy and connect to Githib and Enable automatic deploy.
+10. In settings.py, comment out
+```
+    > DATABASES = {     
+        'default': dj_database_url.parse("<Postrgres database URL>")     
+    }
+``` 
+11. Makemigrations and migrate in the terminal to migrate to PostgreSQL.
+12. In the terminal: 
+    *python3 manage.py loaddata categories* <br>
+    *python3 manage.py loaddata products*
+13. Create a superuser in the terminal: *python3 manage.py createsuperuser*
+14. In settings.py, replace the code so the correct database is used depending on the enviroment. <br>
+    ```
+     if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+15. In the terminal, *heroku config:set DISABLE_COLLECTSTATIC=1* (or add in in on Herok settings page).
+16. In settings.py, add *ALLOWED_HOSTS = ['oldandgold.herokuapp.com', 'localhost']*
+17. Go to Stripe > devolpers > webhooks. And set *https://oldandgold.herokuapp.com/checkout/wh/* as the new webhook url. 
+18. Go to Settings.py and update Stripe enviroment variables, and finally. 
+19. Push to Heroku and check build log that everything seems to be ok. 
+
 ## Amazon Web Services
+For hosting static and media files, AWS have been used. Tha core is to create bucket where yuor files are stored in.
+1. Go to Amazon Web Services. 
+2. Create a bucket in S3 with static website hosting. Paste in the following code under permissions.
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+] 
+```
+3. Create a security policy to the bucket. 
+4. Create a user with IAM
+5. Create a group and attatch our policy to it. 
+6. Create a user and add it to the group and download the .csv file with your user access key and secret access key in it. 
+7. Go to Django and in the terminal, enter *pip3 install boto3* and *pip3 install django-storages*
+8. Add your installed packages to requirements with *pip3 freeze > requirements.txt* 
+9. In settings.py, add storages to your installed apps.
+10. Go to Heroku and settings and add the keys from the .csv you download from AWS. 
+11. Add USE_AWS as key with True as value, and remove collecstatic variable. 
+12. Create a file called custom_storages.py and add this:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+13. In settings.py, Django need to know where to find our static files from now on.
+```
+if 'USE_AWS' in os.environ:
+    # AWS BUCKET CONFIG
+    AWS_STORAGE_BUCKET_NAME = 'oldandgold'
+    AWS_S3_REGION_NAME = 'eu-north-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # STATIC AND MEDIA FILES
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # OVERIDE STATIC AND MEDIA URL´s In PRODUCTION
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+14. Push to Github, and Heroku beacuse the automatic deploy is enabled. 
+15. Voila!
+
+
 ## Local Deployment
 
 # Credits   
