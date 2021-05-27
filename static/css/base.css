@@ -9,63 +9,7 @@ html {
     height: 100%
 } 
 
-.images {
-    width: 50%;
-}
-
-.image-container img {
-    width: 100%;
-}
-
-.logo {
-    font-family: 'Satisfy', cursive !important;
-    font-size: 35px;
-    color: #536162;
-}
-
-h3 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 25px;
-    font-weight: 300;
-}
-
-h2 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 35px;
-}
-
-h4 {
-    font-family: 'Satisfy', cursive !important;
-    font-weight: 300;
-    font-size: 30px;
-}
-
-.beige {
-    background-color: #f3f4ed;
-}
-
-
-.staffpicks {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.hero {
-    height: 500px;
-    margin: auto;
-}
-
-.herocontent {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: auto;
-
-}
-
-.herocontent h2 {
-    font-family: 'Satisfy', cursive !important;
-}
+/*________________________________________________Images */
 
 .heroimage {
     background-image: url(/media/vintageshop.jpg);
@@ -104,6 +48,83 @@ h4 {
     background-size: cover;
     background-position: center;
 }
+.images {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+}
+/*________________________________________________Fonts */
+p {
+    color: #424642;
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.logo {
+    font-family: 'Satisfy', cursive !important;
+    font-size: 35px;
+    color: #536162;
+}
+
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+h4 {
+    font-family: 'Satisfy', cursive !important;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.herocontent h2 {
+    font-family: 'Satisfy', cursive !important;
+}
+
+.navbar {
+    margin:5px !important;
+    padding: 0px !important;
+}
+
+.bigfont {
+    font-size: 18px;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.beige {
+    background-color: #f3f4ed;
+}
+
+/*________________________________________________Colours */
+
+.staffpicks {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hero {
+    height: 500px;
+    margin: auto;
+}
+.herocontent {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: auto;
+
+}
 
 .bgoverlay {
     width: 100%;
@@ -120,11 +141,6 @@ h4 {
 }
 
 
-p {
-    color: #424642;
-    font-size: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
-}
 
 .oldgrey {
     color: #424642 !important;
@@ -137,6 +153,8 @@ p {
 .bg-lightgrey {
     background-color: #536162 !important;
 }
+
+/*________________________________________________Buttons */
 
 .orangebutton {
     background-color: #c06014;
@@ -231,19 +249,6 @@ p {
     text-decoration: none;
 }
 
-.navbar {
-	margin:5px !important;
-	padding: 0px !important;
-}
-
-.bigfont {
-    font-size: 18px;
-}
-
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
 
 .message-container {
     position: fixed;

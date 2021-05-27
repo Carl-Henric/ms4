@@ -1,5 +1,5 @@
 ## MS4 - Old And Gold Vintage watch eCommerace
-"header image"
+![Header](/media/readmeheader.png "Home")
 
 Old And Gold is my fictive webshop with handpicked exclusive vintage watches. Each watch is one of a kind and theres is only one of each watch. 
 I wanted the site to be very straight forward with few categories and minimize objects that can distract the visitor form proceeding a purchase. 
@@ -49,8 +49,7 @@ The site is build to have a light but serious touch. It should be easy for the u
 + Profile page with saved information. 
 + As admin, the ability to add a product. 
 + Confirmation mail when purchase is completed. 
-
-
++ When a watch is purchased it removes from the shop. 
 
 
 
@@ -61,6 +60,9 @@ The site is build to have a light but serious touch. It should be easy for the u
 + Online auctions. 
 + More brands. 
 + Compress all the images. 
++ Add footer.
++ Complete email confirmation functionality. 
+
 
 ## Structure
 The site consists of:
@@ -193,7 +195,7 @@ For accessability have alt-tags been implemented on all images. Partly because o
 
 # Testing  
 ### Code validators
-I have used  [WS3](https://jigsaw.w3.org/) validators for both html and css. 
+I have used [WS3](https://jigsaw.w3.org/) validators for both html and css. 
 
 #### Html:
 Passed all tests. 
@@ -256,6 +258,8 @@ The lack of time in the project had me to skip that. But it will be fix in futur
     - Works correct from product management page. 
 + Confirmation mail when purchase is completed. 
     - Works almost. The functionality is done but the smpt server isen´t correclty setup. 
++ When a watch is purchased it removes from the shop. 
+    - Works correct, when a watch is purchased it´s not longer aviable in the shop.
 
 ### Testing Enviroment
 - All tested is done by me, and when external users needed, then my friends helped me with that. <br>
@@ -380,7 +384,13 @@ if 'USE_AWS' in os.environ:
 15. Voila!
 
 
-## Local Deployment
+## Github
+This project is stored at Github and can easliy cloned and further developed.
+1. Got to Github and search for Carl-Henric or click here [here](https://github.com/Carl-Henric/ms4).
+2. Press the **Code** button and copy the link. 
+3. In Gitpod, in the terminal, type *git clone [paste in copied url]*.
+4. Add env.py to store veriables and check your .gitignore file the env.py includes in it.   
+
 
 # Credits   
 
